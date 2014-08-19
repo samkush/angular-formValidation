@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angularjs directive for validation Function</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body ng-app="formValidationApp">
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+
+      <label>type: text</label>
+
+      <input type="text" name="name" ng-model="user.name" required>
+
+      <p>フォームの値がtrueの時、ボタンを有効にする</p>
+
+      <input type="submit" value="登録" ng-disabled="form.$invalid">
+
+      <p>$valid => {{ form.name.$valid }}</p>
+      <p>$pristine => {{ !form.name.$pristine }}</p>
+      <p>$dirty => {{ !form.name.$dirty }}</p>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+
+      <label>textarea</label>
+      <textarea name="username" ng-model="user.username" ng-minlength="3" ng-maxlength="8"></textarea>
+
+      <p>$valid => {{ form.username.$valid }}</p>
+      <p>$error.minlength => {{ form.username.$error.minlength }}</p>
+      <p>$error.maxlength => {{ form.username.$error.maxlength }}</p>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+
+      <label>type: email</label>
+      <input type="email" name="email" ng-model="user.email" ng-pattern="/^.+@gmail\.com$/">
+
+      <p>gmailかどうかも判定</p>
+
+      <p>$valid => {{ form.email.$valid }}</p>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+
+      <label>type: number</label>
+      <input type="number" name="number" ng-model="user.number">
+      <p>$valid => {{ form.number.$valid }}</p>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <h1>$pristine ・・・ フォームを使っていなければtrue</h1>
+  <h1>$dirty・・・ フォームを使っていればtrue</h1>
+  <h1>$valid ・・・ フォームの値が有効であればtrue</h1>
+  <h1>$invalid ・・・ ？？？</h1>
+  <h1>$error ・・・ エラーの条件に含まれればtrue</h1>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../angularFormValidataion.js"></script>
+  <script src="examples.js"></script>
+
+</body>
+</html>

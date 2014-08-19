@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body,input,div,textarea,code{
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+body{
+  padding: 40px;
+}
+textarea,
+input{
+  display: block;
+  width: 100%;
+  padding: .4rem;
+  border: 1px solid #666;
+  color: #333;
+}
+
+input[disabled="disabled"]{
+  opacity: .5;
+}
+
+hr{
+  margin-top: 100px;
+}

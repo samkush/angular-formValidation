@@ -1,0 +1,17 @@
+{
+  "name": "amcom-suggest",
+  "version": "0.0.1",
+  "main": "amcom-suggest.js",
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "authors": [
+    "yoshida hiroyuki"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "description": "Angularjs directive for Suggest Function"
+}
