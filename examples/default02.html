@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angularjs directive for validation Function</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body ng-app="formValidationApp">
+
+  <h1>[標準ディレクティブ]textareaの値が入力されて、5文字以上20文字以内ならボタンを有効にする</h1>
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+      <textarea name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="20" required></textarea>
+      <em ng-show="form.username.$error.minlength">5文字以上で入力してください</em>
+      <em ng-show="form.username.$error.maxlength">20文字以内で入力してください</em>
+      <input type="submit" value="登録" ng-disabled="form.$invalid">
+    </form>
+  </div>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../angularFormValidataion.js"></script>
+  <script src="examples.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angularjs directive for validation Function</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body ng-app="formValidationApp">
+
+  <h1>[標準ディレクティブ]inputの値が数値かどうか判定する</h1>
+
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+      <input type="number" name="number" ng-model="user.number" required>
+      <em ng-show="form.number.$invalid && !form.number.$pristine">入力が正しくありません</em>
+    </form>
+  </div>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../angularFormValidataion.js"></script>
+  <script src="examples.js"></script>
+
+</body>
+</html>

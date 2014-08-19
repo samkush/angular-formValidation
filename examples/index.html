@@ -6,27 +6,24 @@
   <title>Angularjs directive for validation Function</title>
   <link rel="stylesheet" href="examples.css">
 </head>
-<body ng-app="formValidationApp">
+<body>
 
-  <div ng-controller="mainController">
-    <form name="form" novalidate>
-      <label>type: file</label>
+  <h1>標準ディレクティブ</h1>
 
-      <input type="file" name="file" form-validation-directive-file>
+  <ul>
+    <li><a href="default01.html">inputの値が入力されていればボタンを有効にする</a></li>
+    <li><a href="default02.html">textareaの値が入力されて、5文字以上20文字以内ならボタンを有効にする</a></li>
+    <li><a href="default03.html">inputの値がメールアドレスかどうか判定する</a></li>
+    <li><a href="default04.html">inputの値が数値かどうか判定する</a></li>
+  </ul>
 
-      <dl>
-        <dt>チェック項目</dt>
-        <dd>容量制限チェック</dd>
-        <dd>拡張子チェック</dd>
-        <dd>ディメンションチェック（最大 px と最小 px）</dd>
-      </dl>
+  <h1>カスタムディレクティブ</h1>
 
-    </form>
-  </div>
-
-  <script src="../bower_components/angular/angular.js"></script>
-  <script src="../angularFormValidataion.js"></script>
-  <script src="examples.js"></script>
+  <ul>
+    <li><a href="custom01.html">全角数字を自動で半角数字に変換</a></li>
+    <li><a href="custom02.html">改行を文字数制限に含める・含めない</a></li>
+    <li><a href="file.html">ファイルをアップする（容量チェック・拡張子チェック・ディメンションチェック）</a></li>
+  </ul>
 
 </body>
 </html>

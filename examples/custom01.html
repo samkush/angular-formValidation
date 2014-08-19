@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angularjs directive for validation Function</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body ng-app="formValidationApp">
+
+  <h1>[カスタムディレクティブ]文字列の制限</h1>
+  <dl>
+    <dt>チェック内容</dt>
+    <dd>半角文字の使用禁止</dd>
+  </dl>
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+      <input type="text" name="file" form-validation-directive-no-space>
+    </form>
+  </div>
+
+  <h1>[カスタムディレクティブ]文字列の制限</h1>
+  <dl>
+    <dt>チェック内容</dt>
+    <dd>全角数字を自動で半角数字に変換</dd>
+  </dl>
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+      <input type="text" name="file" form-validation-directive-one-byte-num>
+    </form>
+  </div>
+
+  <h1>[カスタムディレクティブ]文字列の制限</h1>
+  <dl>
+    <dt>チェック内容</dt>
+    <dd>全角を自動で半角に変換</dd>
+  </dl>
+  <div ng-controller="mainController">
+    <form name="form" novalidate>
+      <input type="text" name="file" form-validation-directive-one-byte>
+    </form>
+  </div>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../angularFormValidataion.js"></script>
+  <script src="examples.js"></script>
+
+</body>
+</html>

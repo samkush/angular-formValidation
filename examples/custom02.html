@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angularjs directive for validation Function</title>
+  <link rel="stylesheet" href="examples.css">
+</head>
+<body ng-app="formValidationApp">
+
+  <h1>[カスタムディレクティブ]改行を文字数制限に含める・含めない</h1>
+  <dl>
+    <dt>チェック内容</dt>
+    <dd>全角数字を自動で半角数字に変換</dd>
+  </dl>
+  <div ng-controller="main2ndController">
+    <form name="form" novalidate>
+      <textarea form-validation-directive-limit name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="20" required></textarea>
+      <em ng-show="form.username.$error.minlength">5文字以上で入力してください</em>
+      <em ng-show="form.username.$error.maxlength">20文字以内で入力してください</em>
+      <input type="submit" value="登録" ng-disabled="form.$invalid">
+    </form>
+  </div>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../angularFormValidataion.js"></script>
+  <script src="examples.js"></script>
+
+</body>
+</html>

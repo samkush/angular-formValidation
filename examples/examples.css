@@ -1,14 +1,34 @@
 @charset "UTF-8";
 
-body,input,div,textarea,code{
+body,input,div,textarea,code,ul,li,dl,dt,dd{
   box-sizing: border-box;
   outline: none;
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
+li{
+  margin-top: 10px;
+}
+dl{
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid LightGray;
+  background: white;
+}
+dt{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+dd span{
+  color: red;
+  margin-left: 20px;
+  font-weight: bold;
+}
 body{
   padding: 40px;
+  width: 80%;
+  margin: auto;
 }
 textarea,
 input{
@@ -19,10 +39,34 @@ input{
   color: #333;
 }
 
+input[type="submit"]{
+  margin-top: 40px;
+  background: blue;
+  color: white;
+  border: none;
+}
 input[disabled="disabled"]{
-  opacity: .5;
+  background: LightGray;
+}
+
+input[type="file"]{
+  background: none;
+  color: inherit;
+  border: none;
 }
 
 hr{
   margin-top: 100px;
+}
+
+strong,em{
+  display: block;
+  font-weight: bold;
+  font-style: normal;
+}
+strong{
+  color: blue;
+}
+em{
+  color: red;
 }
