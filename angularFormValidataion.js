@@ -2,60 +2,14 @@
 
 angular
 .module('formValidation', [])
-.directive('formValidationDirectiveNoSpace', function() {
+.directive('customValidation', function() {
   var _link = function (scope, element, attrs) {
-    element.bind('change', function(event){
-      var val = event.target.value;
-      val = val.replace(/\s+/g, "");
-      this.value = val;
-    });
-  }
-  return {
-    restrict: 'A',
-    link: _link,
-  }
-})
-.directive('formValidationDirectiveOneByteNum', function() {
-  var _link = function (scope, element, attrs) {
-    element.bind('change', function(event){
-      var val = event.target.value;
-      val = val.replace(/[０-９]/g, function(s) {
-          return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-      });
-      this.value = val;
-    });
-  }
-  return {
-    restrict: 'A',
-    link: _link,
-  }
-})
-.directive('formValidationDirectiveOneByte', function() {
-  var _link = function (scope, element, attrs) {
-    element.bind('change', function(event){
-      var val = event.target.value;
-      val = val.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
-          return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-      });
-      this.value = val;
-    });
-  }
-  return {
-    restrict: 'A',
-    link: _link,
-  }
-})
-.directive('formValidationDirectiveLimit', function() {
-  var _link = function (scope, element, attrs) {
+    console.log(scope.ngword);
+    scope.isNospace = false;
     element.bind('keyup', function(event){
-      var len;
-      if(scope.isNewLine){
-        len = event.target.value.length;
-      }else{
-        var val = event.target.value.replace(/[\n\r]/g,"");
-        len = val.length;
-      }
+      var len = (scope.isNewLine)? event.target.value.length:event.target.value.replace(/[\n\r]/g,"").length;
       scope.$apply(function () {
+        scope.isNospace = (event.target.value.indexOf(' ') != -1);
         scope.form.username.$error.minlength = !(len >= Number(attrs.ngMinlength));
         scope.form.username.$error.maxlength = !(Number(attrs.ngMaxlength) >= len);
       });
@@ -66,7 +20,7 @@ angular
     link: _link,
   }
 })
-.directive('formValidationDirectiveFile', function() {
+.directive('customValidationFile', function() {
   var _link = function (scope, element, attrs) {
     element.bind('change', function(event){
 

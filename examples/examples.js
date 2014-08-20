@@ -37,7 +37,7 @@ angular
   /*
   custom.html
   */
-  //改行を文字数に含める
+  //改行を文字数に含める・含めない
   $scope.isNewLine = false;
 });
 }(window, document));

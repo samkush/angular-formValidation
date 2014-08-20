@@ -15,7 +15,7 @@
   </dl>
   <div ng-controller="main2ndController">
     <form name="form" novalidate>
-      <textarea form-validation-directive-limit name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="20" required></textarea>
+      <textarea custom-validation name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="20" required></textarea>
       <em ng-show="form.username.$error.minlength">5文字以上で入力してください</em>
       <em ng-show="form.username.$error.maxlength">20文字以内で入力してください</em>
       <input type="submit" value="登録" ng-disabled="form.$invalid">
