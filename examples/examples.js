@@ -28,12 +28,8 @@ angular
   //最大サイズ
   $scope.maxHeight = 500;
   //最小サイズ
-  $scope.mimHeight = 100;
-  /*
-  custom.html
-  */
-})
-.controller('main2ndController', function($scope) {
+  $scope.minHeight = 100;
+
   /*
   custom.html
   */

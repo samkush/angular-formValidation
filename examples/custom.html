@@ -8,15 +8,19 @@
 </head>
 <body ng-app="formValidationApp">
 
-  <h1>[カスタムディレクティブ]文字列の制限</h1>
+  <h1>[カスタムディレクティブ]改行を文字数制限に含める・含めない</h1>
   <dl>
     <dt>チェック内容</dt>
     <dd>禁止文字列 半角スペース</dd>
+    <dd>全角数字を自動で半角数字に変換</dd>
   </dl>
   <div ng-controller="mainController">
     <form name="form" novalidate>
-      <input type="text" name="text" validate-nospace>
+      <textarea validate-line validate-nospace name="text" ng-model="text" ng-minlength="5" ng-maxlength="20" required></textarea>
       <em ng-show="isNospace">半角スペース使用禁止です</em>
+      <em ng-show="form.text.$error.minlength">5文字以上で入力してください</em>
+      <em ng-show="form.text.$error.maxlength">20文字以内で入力してください</em>
+      <input type="submit" value="登録" ng-disabled="form.$invalid || isNospace">
     </form>
   </div>
 
