@@ -11,12 +11,13 @@
   <h1>[カスタムディレクティブ]文字列の制限</h1>
   <dl>
     <dt>チェック内容</dt>
-    <dd>禁止文字列 半角スペース</dd>
+    <dd>禁止文字列 半角スペース ハイフン</dd>
   </dl>
   <div ng-controller="mainController">
     <form name="form" novalidate>
-      <input type="text" name="text" validate-nospace>
-      <em ng-show="isNospace">半角スペース使用禁止です</em>
+      <input type="text" name="text" validate no-space="true" no-hyphen="true" ng-model="value">
+      <em ng-show="form.text.$error.noSpace">半角スペース使用禁止です</em>
+      <em ng-show="form.text.$error.noHyphen">ハイフン使用禁止です</em>
     </form>
   </div>
 

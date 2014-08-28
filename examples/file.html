@@ -18,11 +18,11 @@
   </dl>
   <div ng-controller="mainController">
     <form name="form" novalidate>
-      <input type="file" name="file" validation-file>
-      <em ng-hide="isFileSize">容量が正しくありません</em>
-      <em ng-hide="isFileType">拡張子が正しくありません</em>
-      <em ng-hide="isImageWidth">幅が正しくありません</em>
-      <em ng-hide="isImageHeight">高さが正しくありません</em>
+      <input type="file" name="file" validate-file ng-model="value">
+      <em ng-show="form.file.$error.isFileSize">容量が正しくありません</em>
+      <em ng-show="form.file.$error.isFileType">拡張子が正しくありません</em>
+      <em ng-show="form.file.$error.isImageWidth">幅が正しくありません</em>
+      <em ng-show="form.file.$error.isImageHeight">高さが正しくありません</em>
     </form>
   </div>
 

@@ -9,11 +9,6 @@ angular
   /*
   file.html
   */
-  //初期化
-  $scope.isFileSize = true;
-  $scope.isFileType = true;
-  $scope.isImageWidth = true;
-  $scope.isImageHeight = true;
   //条件
   //最大サイズ
   $scope.fileMaxSize = 200000;
@@ -29,11 +24,5 @@ angular
   $scope.maxHeight = 500;
   //最小サイズ
   $scope.minHeight = 100;
-
-  /*
-  custom.html
-  */
-  //改行を文字数に含める・含めない
-  $scope.isNewLine = false;
 });
 }(window, document));
